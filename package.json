@@ -1,6 +1,8 @@
 {
-  "name": "first_try_build_ui",
-  "version": "0.0.0",
+  "name": "second_try_build_ui",
+  "private":false,
+  "version": "0.0.2",
+  "keywords": ["Vue3","vite","first-try-build-ui"],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -9,6 +11,16 @@
     "test:e2e": "start-server-and-test preview http://localhost:4173/ 'cypress open --e2e'",
     "test:e2e:ci": "start-server-and-test preview http://localhost:4173/ 'cypress run --e2e'",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
+  },
+  "files": ["lib"],
+  "main": "lib/first-try-build-ui.umd.js",
+  "module": "lib/first-try-build-ui.mjs",
+  "exports": {
+    "./lib/style.css":"./lib/style.css",
+    ".":{
+      "require":"./lib/first-try-build-ui.umd.js",
+      "import": "./lib/first-try-build-ui.mjs"
+    }
   },
   "dependencies": {
     "pinia": "^2.0.21",
